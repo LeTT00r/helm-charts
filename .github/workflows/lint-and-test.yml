@@ -3,6 +3,7 @@ on:
   pull_request:
     branches:
       - 'master'
+      - 'ci_chart_testing'
     paths:
       - 'charts/**'
       - '.github/workflows/lint-and-test.yaml'
