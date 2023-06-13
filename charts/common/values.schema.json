@@ -514,18 +514,24 @@
             },
 
 
-
             "existing": {
-              "type": "object",
-              "required": [
-                "secret"
-              ],
-              "properties": {
-                "secret": {
-                  "type": "string"
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": [
+                  "host"
+                ],
+                "properties": {
+                  "host": {
+                    "type": "string"
+                  },
+                  "secretName": {
+                    "type": "string"
+                  }
                 }
-              }
-            },
+              },
+
+
 
 
             "provided": {
