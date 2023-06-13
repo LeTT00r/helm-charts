@@ -520,16 +520,9 @@
                 "required": [
                   "secret"
                 ],
-
-                "existing": {
-                  "type": "object",
-                  "required": [
-                    "secret"
-                  ],
-                  "properties": {
-                    "secret": {
-                      "type": "string"
-                    }
+                "properties": {
+                  "secret": {
+                    "type": "string"
                   }
                 },
                 "provided": {
