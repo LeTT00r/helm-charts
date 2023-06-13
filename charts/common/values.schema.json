@@ -523,9 +523,12 @@
                 ],
                 "properties": {
                   "host": {
-                    "type": "string"
+                    "type": "string",
+                    "examples": [
+                      "myapp.cluster.local"
+                    ]
                   },
-                  "secretName": {
+                  "secret": {
                     "type": "string"
                   }
                 }

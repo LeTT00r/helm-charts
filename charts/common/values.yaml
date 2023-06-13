@@ -71,8 +71,8 @@ ingress:
       validityDuration: 365
 
     existing:
-      - host: ""
-        secretName: ""
+      - host: myapp.cluster.local
+        secret: ""
 
     provided:
       # -- If SSL is terminated on ingress and you have a generated (preferrably CERT-001) certificate/key
