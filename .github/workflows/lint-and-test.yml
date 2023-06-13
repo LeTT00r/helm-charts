@@ -1,8 +1,6 @@
 name: helm-test
 on:
   push:
-    branches:
-      - '*'
     paths:
       - 'charts/**'
       - '.github/workflows/lint-and-test.yaml'
