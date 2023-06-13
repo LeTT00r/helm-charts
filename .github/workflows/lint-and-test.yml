@@ -1,6 +1,6 @@
 name: helm-test
 on:
-  pull_request:
+  push:
     branches:
       - '*'
     paths:
