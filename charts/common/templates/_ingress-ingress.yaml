@@ -49,8 +49,8 @@ spec:
       {{- range $ingress.tls.existing }}
       {{- if has $.host .host }}
       secretName: {{ $.host.secret }}
-      { { - end } }
-      { { - end } }
+      {{- end }}
+      {{- end }}
 
       {{- end }}
   {{- end }}
