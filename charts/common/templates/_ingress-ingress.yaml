@@ -47,9 +47,10 @@ spec:
       {{- else if eq $ingress.tls.type "existing" }}
 
       {{- range $ingress.tls.existing }}
-      {{- if has $.host .host -}}
+      {{- if has $.host .host }}
       secretName: {{ $.host.secret }}
-
+      { { - end } }
+      { { - end } }
 
       {{- end }}
   {{- end }}
