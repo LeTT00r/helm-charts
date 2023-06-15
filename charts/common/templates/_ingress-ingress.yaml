@@ -1,7 +1,8 @@
 {{- define "common.ingress.ingress" -}}
 {{- $root := . }}
 {{- $ingress := .Values.ingress }}
-{{- if $ingress.deploy }}
+{{- if true }}
+
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
@@ -38,21 +39,21 @@ spec:
   {{- if $ingress.tls }}
   {{- if and (ne $ingress.tls.type "none") (ne $ingress.tls.type "") }}
   tls:
+    {{- range $outer := $ingress.tls.existing }}
     - hosts:
-      {{- range $ingress.rules }}
-        - {{ .host }}
-      {{- end }}
-      {{- if or (eq $ingress.tls.type "self") (eq $ingress.tls.type "provided") }}
+      - {{ $outer.host }}
+
+        {{- if or (eq $ingress.tls.type "self") (eq $ingress.tls.type "provided") }}
       secretName: {{ template "library.name" . }}-ingress-tls
-      {{- else if eq $ingress.tls.type "existing" }}
+        {{- else if eq $ingress.tls.type "existing" }}
+      secretName: {{ $outer.secret }}
 
-      {{- range $ingress.tls.existing }}
-      {{- if has $.host .host }}
-      secretName: {{ $.host.secret }}
-      {{- end }}
-      {{- end }}
+        {{- end }}
+
 
       {{- end }}
+
+
   {{- end }}
   {{- end }}
 {{- end }}
