@@ -1,8 +1,7 @@
 {{- define "common.ingress.ingress" -}}
 {{- $root := . }}
 {{- $ingress := .Values.ingress }}
-{{- if true }}
-
+{{- if $ingress.deploy }}
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
