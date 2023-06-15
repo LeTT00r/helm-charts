@@ -48,7 +48,7 @@ Major Changes to functions are documented with the version affected. **Before up
 | ingress.rules[1].http.paths[0].backend.servicePort | string | `"http"` | servicePort describes the port where the service is listening at (can be either a string or a number) |
 | ingress.rules[1].http.paths[0].path | string | `"/"` | path which ingress is listening |
 | ingress.rules[1].http.paths[0].pathType | string | `"ImplementationSpecific"` | pathType Each path in an Ingress is required to have a corresponding path type. Comment out for using default ("ImplementationSpecific") |
-| ingress.tls.existing[0] | object | `{"host":"","secret":"certificate-tls"}` | name of an existing secret for a specific host, with tls.crt & tls.key content |
+| ingress.tls.existing[0] | object | `{"host":"exmaple_host","secret":"exapmle-certificate-tls"}` | name of an existing secret for a specific host, with tls.crt & tls.key content |
 | ingress.tls.provided.cert | string | `""` | If SSL is terminated on ingress and you have a generated (preferrably CERT-001) certificate/key Has to be base64 encoded and should be encrypted in the ejson vault Add Variable to your CI/CD Settings "SKIP_DECRYPT" with value "" that it doesnt decrypt the cert and fails. |
 | ingress.tls.provided.key | string | `""` | The key must not have a passphrase |
 | ingress.tls.self | object | `{"alternativeDnsNames":[],"commonName":"*.cluster.local","ipAddresses":[],"validityDuration":365}` | depending on the type you have further configuration options: |
